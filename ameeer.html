@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Front-End Page</title>
+  <style>
+    /* Reset & CSS Variables */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #6b7280;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .btn {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* Dynamic Output Area */
+    .counter-section {
+      background: var(--card-bg);
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .counter-value {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">BrandName</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Your App</h1>
+    <p>A modern front-end layout designed to be clean, responsive, and easy to extend.</p>
+    <button class="btn" id="actionBtn">Click Me</button>
+  </section>
+
+  <!-- Interactive Component Example -->
+  <div class="counter-section">
+    <h3>Interactive Counter</h3>
+    <div class="counter-value" id="countDisplay">0</div>
+    <button class="btn" id="incrementBtn">Increment</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Handle main action button
+    document.getElementById('actionBtn').addEventListener('click', () => {
+      alert('Action button clicked!');
+    });
+
+    // Handle counter functionality
+    let count = 0;
+    const countDisplay = document.getElementById('countDisplay');
+    const incrementBtn = document.getElementById('incrementBtn');
+
+    incrementBtn.addEventListener('click', () => {
+      count++;
+      countDisplay.textContent = count;
+    });
+  </script>
+
+</body>
+</html>
